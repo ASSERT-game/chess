@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 02:07:48 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 02:16:39 by home             ###   ########.fr       */
+/*   Updated: 2020/06/16 03:24:17 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # define NONE		(0)
 
 # define HOVER		(1)
-# define SELECT		(8)
-# define POSSIBLE	(9)
+# define POSSIBLE	(8)
+# define SELECT		(9)
 
 # define W_PAWN		(2)
 # define W_ROOK		(3)

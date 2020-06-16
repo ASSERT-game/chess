@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 01:17:29 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 02:41:47 by home             ###   ########.fr       */
+/*   Updated: 2020/06/16 03:23:40 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,20 @@ void	draw_hover_tile(t_game_state *game_state, t_display *display)
 {
 	SDL_Rect	rect;
 
-	rect.x = 0;
-	rect.y = 0;
+	rect.x = (game_state->mouse_x / 64) * 64;
+	rect.y = (game_state->mouse_y / 64) * 64;
 	rect.h = 64;
 	rect.w = 64;
-
 	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->scr_rect[HOVER]), &rect);
+}
+
+void	draw_select_tile(t_game_state *game_state, t_display *display)
+{
+	SDL_Rect	rect;
+
+	rect.x = (game_state->select_x / 64) * 64;
+	rect.y = (game_state->select_y / 64) * 64;
+	rect.h = 64;
+	rect.w = 64;
+	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->scr_rect[SELECT]), &rect);
 }
