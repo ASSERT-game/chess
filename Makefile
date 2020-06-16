@@ -8,9 +8,12 @@ BIN_DIR = bin/
 
 # List of all the source files.
 SRC_NAMES = \
+	carve_chess_texture \
 	main \
 	pixels \
+	render \
 	SDL_initialize \
+	setup \
 	user_interface \
 
 

@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 22:41:24 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 00:01:57 by home             ###   ########.fr       */
+/*   Updated: 2020/06/16 02:21:00 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,19 @@
 
 # include "window_config.h"
 # include "structs.h"
+# include "piece_id.h"
 
+void		SDLU_start(t_display *dest);
+void		SDLU_close(t_display *display);
 
-void	SDLU_start(t_display *dest);
-void	SDLU_close(t_display *display);
+SDL_Rect	*carve_chess_texture();
+void		draw_game_state(t_game_state *game_state, t_display *display);
 
-void	clear_screen(unsigned char *pixel_array);
-void	color_in(unsigned char *pixel_array, int color, int x, int y);
+void		set_new_game(int *game_map);
 
-void	process_user_input(t_game_state *game_state);
+void		clear_screen(unsigned char *pixel_array);
+void		color_in(unsigned char *pixel_array, int color, int x, int y);
+
+void		process_user_input(t_game_state *game_state);
 
 #endif

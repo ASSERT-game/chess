@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 22:03:40 by home              #+#    #+#             */
-/*   Updated: 2020/06/15 23:58:08 by home             ###   ########.fr       */
+/*   Updated: 2020/06/16 00:21:29 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	SDLU_start(t_display *dest)
 {
 	SDL_Window	*window;
-	// SDL_Surface	*surface;
 
 	dest->width = WIN_WIDTH;
 	dest->height = WIN_HEIGHT;
@@ -29,13 +28,7 @@ void	SDLU_start(t_display *dest)
 				SDL_WINDOW_SHOWN
 	);
 	dest->renderer = SDL_CreateRenderer(window, -1, 0);
-
-	if (dest->renderer == NULL)
-		printf("Error on renderer\n");
-	// surface = SDL_GetWindowSurface(window);
-
 	dest->window = window;
-	// dest->pixels = surface->pixels;
 }
 
 void	SDLU_close(t_display *display)
