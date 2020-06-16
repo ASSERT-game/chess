@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 22:05:38 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 02:07:39 by home             ###   ########.fr       */
+/*   Updated: 2020/06/16 02:39:57 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct	s_display
 typedef struct	s_game_state
 {
 	bool		active;
+	int			turn;
 
 	SDL_Texture	*texture;
 	SDL_Rect	*scr_rect;
@@ -38,6 +39,9 @@ typedef struct	s_game_state
 //Maybe make this itself a structure.
 	int			mouse_x;
 	int			mouse_y;
+
+	int			select_x;
+	int			select_y;
 }				t_game_state;
 
 

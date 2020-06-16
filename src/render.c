@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 01:17:29 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 02:08:48 by home             ###   ########.fr       */
+/*   Updated: 2020/06/16 02:41:47 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,16 @@ void	draw_game_state(t_game_state *game_state, t_display *display)
 		}
 		i++;
 	}
+}
+
+void	draw_hover_tile(t_game_state *game_state, t_display *display)
+{
+	SDL_Rect	rect;
+
+	rect.x = 0;
+	rect.y = 0;
+	rect.h = 64;
+	rect.w = 64;
+
+	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->scr_rect[HOVER]), &rect);
 }
