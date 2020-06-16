@@ -6,17 +6,18 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 22:41:24 by home              #+#    #+#             */
-/*   Updated: 2020/06/15 22:53:33 by home             ###   ########.fr       */
+/*   Updated: 2020/06/16 00:01:57 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MASTER_H
 # define MASTER_H
 
-#include <SDL2/SDL.h>
+# include <SDL2/SDL.h>
+# include <SDL_image.h>
 
-#include "window_config.h"
-#include "structs.h"
+# include "window_config.h"
+# include "structs.h"
 
 
 void	SDLU_start(t_display *dest);

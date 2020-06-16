@@ -1,7 +1,7 @@
 NAME = chess
 FLAGS = -Wall -Wextra -Werror
-INCLUDES = -I includes/
-SDL_LIB = -L ~/.brew/lib -l SDL2 -l SDL2_image
+INCLUDES = -I includes/ -I ~/.brew/include/SDL2/
+SDL_LIB = -L ~/.brew/lib -l SDL2 -l sdl2_image
 
 SRC_DIR = src/
 BIN_DIR = bin/

@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 22:05:38 by home              #+#    #+#             */
-/*   Updated: 2020/06/15 22:43:35 by home             ###   ########.fr       */
+/*   Updated: 2020/06/15 23:35:41 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct	s_display
 
 	SDL_Window		*window;
 	unsigned char	*pixels;
+	SDL_Renderer	*renderer;
 }				t_display;
 
 typedef struct	s_game_state
