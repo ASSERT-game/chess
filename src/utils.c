@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 21:49:34 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 03:25:04 by home             ###   ########.fr       */
+/*   Updated: 2020/06/17 06:30:47 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,18 @@ bool	black_piece(int piece_ID)
 	return (result);
 }
 
+bool	same_as_turn(int piece, int turn)
+{
+	bool	result;
+
+	result = false;
+	if (turn % 2 == WHITE_TURN && white_piece(piece) == true)
+		result = true;
+	if (turn % 2 == BLACK_TURN && black_piece(piece) == true)
+		result = true;
+	return (result);
+}
+
 int		screen_to_board(int x, int y)
 {
 	int	row;
@@ -41,4 +53,18 @@ int		screen_to_board(int x, int y)
 	row = y / 64;
 
 	return (row * 8 + col);
+}
+
+void	move_by(int *dst, int delta_x, int delta_y)
+{
+	int	x;
+	int	y;
+
+	x = *dst % 8 + delta_x;
+	y = *dst / 8 + delta_y;
+	if (0 <= x && x < 8 &&
+		0 <= y && y < 8)
+		*dst += delta_y * 8 + delta_x;
+	else
+		*dst = OUT_OF_BOUNDS;
 }

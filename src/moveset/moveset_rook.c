@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 04:59:15 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 04:59:45 by home             ###   ########.fr       */
+/*   Updated: 2020/06/17 06:32:06 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,64 +18,56 @@ void	toggle_rook_moveset(t_game_state *game_state)
 	int		try;
 
 	i = screen_to_board(game_state->select_x, game_state->select_y);
-	try = i - 8;
-	while (try > 0)
+	try = i;
+	move_by(&try, 0, -1);
+	while (try != OUT_OF_BOUNDS)
 	{
-		if (game_state->map[try] == NONE)
-			game_state->possible_tiles[try] = 1;
-		else
+		if (game_state->map[try] != NONE)
 		{
-			if (game_state->turn % 2 == WHITE_TURN && white_piece(game_state->map[try]) != true)
-				game_state->possible_tiles[try] = 1;
-			if (game_state->turn % 2 == BLACK_TURN && black_piece(game_state->map[try]) != true)
+			if (same_as_turn(game_state->map[try], game_state->turn) == false)
 				game_state->possible_tiles[try] = 1;
 			break ;
 		}
-		try -= 8; //Going one full row UP
+		game_state->possible_tiles[try] = 1;
+		move_by(&try, 0, -1);
 	}
-	try = i + 8;
-	while (try < 64)
+	try = i;
+	move_by(&try, 0, 1);
+	while (try != OUT_OF_BOUNDS)
 	{
-		if (game_state->map[try] == NONE)
-			game_state->possible_tiles[try] = 1;
-		else
+		if (game_state->map[try] != NONE)
 		{
-			if (game_state->turn % 2 == WHITE_TURN && white_piece(game_state->map[try]) != true)
-				game_state->possible_tiles[try] = 1;
-			if (game_state->turn % 2 == BLACK_TURN && black_piece(game_state->map[try]) != true)
+			if (same_as_turn(game_state->map[try], game_state->turn) == false)
 				game_state->possible_tiles[try] = 1;
 			break ;
 		}
-		try += 8; //Going one full row DOWN
+		game_state->possible_tiles[try] = 1;
+		move_by(&try, 0, 1);
 	}
-	try = i - 1;
-	while (try % 8 != 7)
+	try = i;
+	move_by(&try, -1, 0);
+	while (try != OUT_OF_BOUNDS)
 	{
-		if (game_state->map[try] == NONE)
-			game_state->possible_tiles[try] = 1;
-		else
+		if (game_state->map[try] != NONE)
 		{
-			if (game_state->turn % 2 == WHITE_TURN && white_piece(game_state->map[try]) != true)
-				game_state->possible_tiles[try] = 1;
-			if (game_state->turn % 2 == BLACK_TURN && black_piece(game_state->map[try]) != true)
+			if (same_as_turn(game_state->map[try], game_state->turn) == false)
 				game_state->possible_tiles[try] = 1;
 			break ;
 		}
-		try -= 1; //Going one full row LEFT
+		game_state->possible_tiles[try] = 1;
+		move_by(&try, -1, 0);
 	}
-	try = i + 1;
-	while (try % 8 != 0)
+	try = i;
+	move_by(&try, 1, 0);
+	while (try != OUT_OF_BOUNDS)
 	{
-		if (game_state->map[try] == NONE)
-			game_state->possible_tiles[try] = 1;
-		else
+		if (game_state->map[try] != NONE)
 		{
-			if (game_state->turn % 2 == WHITE_TURN && white_piece(game_state->map[try]) != true)
-				game_state->possible_tiles[try] = 1;
-			if (game_state->turn % 2 == BLACK_TURN && black_piece(game_state->map[try]) != true)
+			if (same_as_turn(game_state->map[try], game_state->turn) == false)
 				game_state->possible_tiles[try] = 1;
 			break ;
 		}
-		try += 1; //Going one full row RIGHT
+		game_state->possible_tiles[try] = 1;
+		move_by(&try, 1, 0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 04:59:15 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 05:02:19 by home             ###   ########.fr       */
+/*   Updated: 2020/06/17 06:10:28 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	toggle_queen_moveset(t_game_state *game_state)
 {
-	(void)game_state;
+	toggle_rook_moveset(game_state);
+	toggle_bishop_moveset(game_state);
 }

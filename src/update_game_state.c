@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 03:50:13 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 04:42:01 by home             ###   ########.fr       */
+/*   Updated: 2020/06/17 06:44:31 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	update_game_input(t_game_state *game_state)
 		if (valid_selection(game_state) == true)
 		{
 			game_state->selected_piece = &(game_state->map[screen_to_board(game_state->select_x, game_state->select_y)]);
-			toggle_rook_moveset(game_state);
+			toggle_horse_moveset(game_state);
 		}
 		else
 			reset_to_no_selection(game_state);
