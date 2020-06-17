@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 22:05:38 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 02:39:57 by home             ###   ########.fr       */
+/*   Updated: 2020/06/16 19:39:38 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,13 @@ typedef struct	s_game_state
 	int			mouse_x;
 	int			mouse_y;
 
+	int			*selected_piece;
+
 	int			select_x;
 	int			select_y;
+
+	int			move_to_x;
+	int			move_to_y;
 }				t_game_state;
 
 

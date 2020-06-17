@@ -14,6 +14,7 @@ SRC_NAMES = \
 	render \
 	SDL_initialize \
 	setup \
+	update_game_state \
 	user_interface \
 
 

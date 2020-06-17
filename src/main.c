@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 22:40:46 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 03:22:33 by home             ###   ########.fr       */
+/*   Updated: 2020/06/16 19:41:48 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ void	game_state_initialize(t_game_state *game_state, t_display *display)
 	set_new_game(game_state->map);
 
 	game_state->scr_rect = carve_chess_texture();
+
+	game_state->selected_piece = NULL;
+	game_state->select_x = -1;
+	game_state->select_y = -1;
+
+	game_state->move_to_x = -1;
+	game_state->move_to_y = -1;
 }
 
 int	main(void)
@@ -33,7 +40,7 @@ int	main(void)
 	while (game_state.active == true)
 	{
 		process_user_input(&game_state);
-		// update_game_input(&game_state);
+		update_game_input(&game_state);
 
 		draw_game_state(&game_state, &display);
 		draw_hover_tile(&game_state, &display);

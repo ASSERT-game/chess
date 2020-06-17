@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 22:56:31 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 03:21:16 by home             ###   ########.fr       */
+/*   Updated: 2020/06/16 19:41:19 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,11 @@ void	process_user_input(t_game_state *game_state)
 			SDL_GetMouseState(&(game_state->mouse_x), &(game_state->mouse_y));
 		else if (e.type == SDL_MOUSEBUTTONDOWN)
 		{
-			if (e.button.button == SDL_BUTTON_LEFT)
-			{
+			if (e.button.button == SDL_BUTTON_LEFT && game_state->selected_piece == NULL)
 				SDL_GetMouseState(&(game_state->select_x), &(game_state->select_y));
-			}
+			else if (e.button.button == SDL_BUTTON_LEFT && game_state->selected_piece != NULL)
+				SDL_GetMouseState(&(game_state->move_to_x), &(game_state->move_to_y));
 		}
-		// else if (e.type == SDL_MOUSEBUTTONUP)
-		// {
-		// 	if (e.button.button == SDL_BUTTON_LEFT)
-		// 		game_state->l_mouse_down = false;
-		// 	if (e.button.button == SDL_BUTTON_RIGHT)
-		// 		game_state->r_mouse_down = false;
-		// }
 	}
 	keystate = SDL_GetKeyboardState(NULL);
-
-	// if (game_state->l_mouse_down == true)
-	// 	game_state->pixmap[convert_to_pixmap(game_state->mouse_x, game_state->mouse_y, game_state->size)] = 0xAA00CC;
-	// if (game_state->r_mouse_down == true)
-	// 	game_state->pixmap[convert_to_pixmap(game_state->mouse_x, game_state->mouse_y, game_state->size)] = 0x000000;
-
-	// if (keystate[SDL_SCANCODE_COMMAND] && keystate[SDL_SCANCODE_BACKSPACE])
-	// 	clear_image(game_state->pixmap, game_state->size);
 }
