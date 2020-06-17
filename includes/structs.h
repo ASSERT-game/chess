@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 22:05:38 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 19:39:38 by home             ###   ########.fr       */
+/*   Updated: 2020/06/17 04:12:33 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct	s_game_state
 	SDL_Rect	*scr_rect;
 
 	int			map[64];
+	int			possible_tiles[64];
 
 //Maybe make this itself a structure.
 	int			mouse_x;

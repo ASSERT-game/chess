@@ -18,11 +18,19 @@ SRC_NAMES = \
 	user_interface \
 	utils \
 
+MOVESET = \
+	moveset_bishop \
+	moveset_horse \
+	moveset_king \
+	moveset_pawn \
+	moveset_queen \
+	moveset_rook \
 
 # List of all the source files, folders are to be added by
-# including a $(addprefix, DIR_NAME, $(DIR_FILES))
+# including a $(addprefix DIR_NAME, $(DIR_FILES))
 FILE_NAMES = \
 	$(SRC_NAMES) \
+	$(addprefix moveset/, $(MOVESET)) \
 
 SRCS = $(addsuffix .c, $(addprefix $(SRC_DIR), $(FILE_NAMES)))
 # Object files will be built to BIN_DIR. They will build the

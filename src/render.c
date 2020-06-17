@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 01:17:29 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 19:38:29 by home             ###   ########.fr       */
+/*   Updated: 2020/06/17 04:48:01 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,23 @@ void	draw_select_tile(t_game_state *game_state, t_display *display)
 	rect.h = 64;
 	rect.w = 64;
 	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->scr_rect[SELECT]), &rect);
+}
+
+void	draw_possible_tiles(t_game_state *game_state, t_display *display)
+{
+	int			i;
+	SDL_Rect	rect;
+
+	i = 0;
+	rect.h = 64;
+	rect.w = 64;
+	while (i < 64)
+	{
+		if (game_state->possible_tiles[i] == 1)
+		{
+			get_loc(i, &(rect.x), &(rect.y));
+			SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->scr_rect[POSSIBLE]), &rect);
+		}
+		i++;
+	}
 }

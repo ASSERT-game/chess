@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 03:50:13 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 03:36:41 by home             ###   ########.fr       */
+/*   Updated: 2020/06/17 04:42:01 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	reset_to_no_selection(t_game_state *game_state)
 {
+	bzero(game_state->possible_tiles, sizeof(game_state->possible_tiles));
 	game_state->selected_piece = NULL;
 	game_state->select_x = -1;
 	game_state->select_y = -1;
 
 	game_state->move_to_x = -1;
 	game_state->move_to_y = -1;
+
 }
 
 bool	valid_selection(t_game_state *game_state)
@@ -75,7 +77,10 @@ void	update_game_input(t_game_state *game_state)
 	if (game_state->selected_piece == NULL)
 	{
 		if (valid_selection(game_state) == true)
+		{
 			game_state->selected_piece = &(game_state->map[screen_to_board(game_state->select_x, game_state->select_y)]);
+			toggle_rook_moveset(game_state);
+		}
 		else
 			reset_to_no_selection(game_state);
 	}

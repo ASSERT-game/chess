@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 22:41:24 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 03:25:04 by home             ###   ########.fr       */
+/*   Updated: 2020/06/17 04:32:55 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ void		set_new_game(int *game_map);
 void		draw_game_state(t_game_state *game_state, t_display *display);
 void		draw_hover_tile(t_game_state *game_state, t_display *display);
 void		draw_select_tile(t_game_state *game_state, t_display *display);
+void		draw_possible_tiles(t_game_state *game_state, t_display *display);
+
+void		toggle_pawn_moveset(t_game_state *game_state);
+void		toggle_rook_moveset(t_game_state *game_state);
+void		toggle_horse_moveset(t_game_state *game_state);
+void		toggle_bishop_moveset(t_game_state *game_state);
+void		toggle_queen_moveset(t_game_state *game_state);
+void		toggle_king_moveset(t_game_state *game_state);
 
 void		update_game_input(t_game_state *game_state);
 
