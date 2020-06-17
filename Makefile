@@ -16,6 +16,7 @@ SRC_NAMES = \
 	setup \
 	update_game_state \
 	user_interface \
+	utils \
 
 
 # List of all the source files, folders are to be added by

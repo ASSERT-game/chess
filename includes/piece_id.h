@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 02:07:48 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 03:24:17 by home             ###   ########.fr       */
+/*   Updated: 2020/06/17 03:07:27 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,8 @@
 # define B_BISHOP	(13)
 # define B_QUEEN	(14)
 # define B_KING		(15)
+
+# define WHITE_TURN (0)
+# define BLACK_TURN (1)
 
 #endif

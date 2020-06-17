@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 22:41:24 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 19:15:02 by home             ###   ########.fr       */
+/*   Updated: 2020/06/17 03:25:04 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,9 @@ void		clear_screen(unsigned char *pixel_array);
 void		color_in(unsigned char *pixel_array, int color, int x, int y);
 
 void		process_user_input(t_game_state *game_state);
+
+bool		black_piece(int piece_ID);
+bool		white_piece(int piece_ID);
+int			screen_to_board(int x, int y);
 
 #endif
