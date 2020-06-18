@@ -6,11 +6,27 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 03:50:13 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 22:30:10 by home             ###   ########.fr       */
+/*   Updated: 2020/06/18 00:16:20 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "master.h"
+
+void	toggle_moveset( t_game_state *game_state)
+{
+	if (*(game_state->selected_piece) == B_BISHOP || *(game_state->selected_piece) == W_BISHOP)
+		toggle_bishop_moveset(game_state);
+	else if (*(game_state->selected_piece) == B_HORSE || *(game_state->selected_piece) == W_HORSE)
+		toggle_horse_moveset(game_state);
+	else if (*(game_state->selected_piece) == B_KING || *(game_state->selected_piece) == W_KING)
+		toggle_king_moveset(game_state);
+	else if (*(game_state->selected_piece) == B_PAWN || *(game_state->selected_piece) == W_PAWN)
+		toggle_pawn_moveset(game_state);
+	else if (*(game_state->selected_piece) == B_QUEEN || *(game_state->selected_piece) == W_QUEEN)
+		toggle_queen_moveset(game_state);
+	else if (*(game_state->selected_piece) == B_ROOK || *(game_state->selected_piece) == W_ROOK)
+		toggle_rook_moveset(game_state);
+}
 
 void	reset_to_no_selection(t_game_state *game_state)
 {
@@ -48,15 +64,13 @@ bool	move_valid(t_game_state *game_state)
 	bool	result;
 	int		move_to_index;
 
-	result = true;
+	result = false;
 	if (game_state->move_to_x < 0 || game_state->move_to_y < 0)
 		result = false;
 
 	move_to_index = screen_to_board(game_state->move_to_x, game_state->move_to_y);
-	if (game_state->turn % 2 == WHITE_TURN && white_piece(game_state->map[move_to_index]) == true)
-		result = false;
-	if (game_state->turn % 2 == BLACK_TURN && black_piece(game_state->map[move_to_index]) == true)
-		result = false;
+	if (game_state->possible_tiles[move_to_index] != 0)
+		result = true;
 
 	return (result);
 }
@@ -79,7 +93,7 @@ void	update_game_input(t_game_state *game_state)
 		if (valid_selection(game_state) == true)
 		{
 			game_state->selected_piece = &(game_state->map[screen_to_board(game_state->select_x, game_state->select_y)]);
-			toggle_pawn_moveset(game_state);
+			toggle_moveset(game_state);
 		}
 		else
 			reset_to_no_selection(game_state);
