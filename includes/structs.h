@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 22:05:38 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 04:12:33 by home             ###   ########.fr       */
+/*   Updated: 2020/06/18 22:09:04 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@
 
 typedef struct	s_display
 {
-	int				width;
-	int				height;
-	int				size;
-
 	SDL_Window		*window;
 	SDL_Renderer	*renderer;
 }				t_display;

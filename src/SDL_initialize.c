@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 22:03:40 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 00:21:29 by home             ###   ########.fr       */
+/*   Updated: 2020/06/18 22:09:34 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,11 @@ void	SDLU_start(t_display *dest)
 {
 	SDL_Window	*window;
 
-	dest->width = WIN_WIDTH;
-	dest->height = WIN_HEIGHT;
-	dest->size = dest->width * dest->height;
-
 	SDL_Init(SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow(
 				WIN_TITLE,
 				WIN_POS_X, WIN_POS_Y,
-				dest->width, dest->height,
+				WIN_WIDTH, WIN_HEIGHT,
 				SDL_WINDOW_SHOWN
 	);
 	dest->renderer = SDL_CreateRenderer(window, -1, 0);
