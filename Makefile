@@ -10,7 +10,6 @@ BIN_DIR = bin/
 SRC_NAMES = \
 	carve_chess_texture \
 	main \
-	pixels \
 	render \
 	SDL_initialize \
 	setup \
