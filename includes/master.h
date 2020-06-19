@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 22:41:24 by home              #+#    #+#             */
-/*   Updated: 2020/06/18 22:06:55 by home             ###   ########.fr       */
+/*   Updated: 2020/06/19 04:03:56 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 void		SDLU_start(t_display *dest);
 void		SDLU_close(t_display *display);
 
-SDL_Rect	*carve_chess_texture();
+SDL_Rect	*carve_chess_texture(void);
 
 void		set_new_game(int *game_map);
 

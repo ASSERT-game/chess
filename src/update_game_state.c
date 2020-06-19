@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 03:50:13 by home              #+#    #+#             */
-/*   Updated: 2020/06/18 00:16:20 by home             ###   ########.fr       */
+/*   Updated: 2020/06/19 02:37:39 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	reset_to_no_selection(t_game_state *game_state)
 
 	game_state->move_to_x = -1;
 	game_state->move_to_y = -1;
-
 }
 
 bool	valid_selection(t_game_state *game_state)

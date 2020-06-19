@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/17 04:59:15 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 22:38:23 by home             ###   ########.fr       */
+/*   Updated: 2020/06/19 02:37:33 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ void	toggle_pawn_moveset(t_game_state *game_state)
 	if (game_state->turn % 2 == WHITE_TURN && i / 8 != 6)
 		try[1] = OUT_OF_BOUNDS;
 	if (game_state->turn % 2 == BLACK_TURN && i / 8 != 1)
+		try[1] = OUT_OF_BOUNDS;
+
+	if (try[0] == OUT_OF_BOUNDS) //if something is in front of the pawn it can't move 2 places
 		try[1] = OUT_OF_BOUNDS;
 
 	move_by(&(try[2]), -1, (delta));

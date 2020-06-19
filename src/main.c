@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 22:40:46 by home              #+#    #+#             */
-/*   Updated: 2020/06/18 04:14:39 by home             ###   ########.fr       */
+/*   Updated: 2020/06/19 00:56:34 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	game_state_initialize(t_game_state *game_state, t_display *display)
 
 	set_new_game(game_state->map);
 
-	game_state->scr_rect = carve_chess_texture();
+	game_state->src_rect = carve_chess_texture();
 
 	game_state->turn = 0;
 

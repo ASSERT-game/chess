@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 22:56:31 by home              #+#    #+#             */
-/*   Updated: 2020/06/16 19:41:19 by home             ###   ########.fr       */
+/*   Updated: 2020/06/19 02:20:26 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 void	process_user_input(t_game_state *game_state)
 {
 	SDL_Event		e;
-	const Uint8		*keystate;
-
 
 	while (SDL_PollEvent(&e) != 0)
 	{
@@ -32,5 +30,4 @@ void	process_user_input(t_game_state *game_state)
 				SDL_GetMouseState(&(game_state->move_to_x), &(game_state->move_to_y));
 		}
 	}
-	keystate = SDL_GetKeyboardState(NULL);
 }

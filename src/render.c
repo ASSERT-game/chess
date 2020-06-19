@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 01:17:29 by home              #+#    #+#             */
-/*   Updated: 2020/06/18 21:47:11 by home             ###   ########.fr       */
+/*   Updated: 2020/06/19 02:19:02 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,8 @@ void	draw_game_state(t_game_state *game_state, t_display *display)
 		{
 			get_loc(i, &(rect.x), &(rect.y));
 			piece_type = game_state->map[i];
-			src_rect = game_state->scr_rect[piece_type];
+			src_rect = game_state->src_rect[piece_type];
 			SDL_RenderCopy(display->renderer, game_state->texture, &src_rect, &rect);
-			// SDL_RenderCopy(display.renderer, game_state.from, &(src), &rect);
 		}
 		i++;
 	}
@@ -55,7 +54,7 @@ void	draw_hover_tile(t_game_state *game_state, t_display *display)
 	rect.y = (game_state->mouse_y / 64) * 64;
 	rect.h = 64;
 	rect.w = 64;
-	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->scr_rect[HOVER]), &rect);
+	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->src_rect[HOVER]), &rect);
 }
 
 void	draw_select_tile(t_game_state *game_state, t_display *display)
@@ -68,7 +67,7 @@ void	draw_select_tile(t_game_state *game_state, t_display *display)
 	rect.y = (game_state->select_y / 64) * 64;
 	rect.h = 64;
 	rect.w = 64;
-	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->scr_rect[SELECT]), &rect);
+	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->src_rect[SELECT]), &rect);
 }
 
 void	draw_possible_tiles(t_game_state *game_state, t_display *display)
@@ -84,7 +83,7 @@ void	draw_possible_tiles(t_game_state *game_state, t_display *display)
 		if (game_state->possible_tiles[i] == 1)
 		{
 			get_loc(i, &(rect.x), &(rect.y));
-			SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->scr_rect[POSSIBLE]), &rect);
+			SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->src_rect[POSSIBLE]), &rect);
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/13 22:05:38 by home              #+#    #+#             */
-/*   Updated: 2020/06/18 22:09:04 by home             ###   ########.fr       */
+/*   Updated: 2020/06/19 00:56:34 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct	s_game_state
 	int			turn;
 
 	SDL_Texture	*texture;
-	SDL_Rect	*scr_rect;
+	SDL_Rect	*src_rect;
 
 	int			map[64];
 	int			possible_tiles[64];
