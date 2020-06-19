@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 22:40:46 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 04:41:20 by home             ###   ########.fr       */
+/*   Updated: 2020/06/18 04:14:39 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(void)
 		update_game_input(&game_state);
 
 		draw_game_state(&game_state, &display);
+		draw_grid(&game_state, &display);
 		draw_hover_tile(&game_state, &display);
 		draw_select_tile(&game_state, &display);
 		draw_possible_tiles(&game_state, &display);

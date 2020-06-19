@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 01:17:29 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 04:48:01 by home             ###   ########.fr       */
+/*   Updated: 2020/06/18 21:47:11 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,20 @@ void	draw_possible_tiles(t_game_state *game_state, t_display *display)
 		}
 		i++;
 	}
+}
+
+void	draw_grid(t_game_state *game_state, t_display *display)
+{
+	int	i;
+
+	i = 0;
+	SDL_SetRenderDrawColor(display->renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
+	while (i < 8)
+	{
+		SDL_RenderDrawLine(display->renderer, i * 64, 0, i * 64, WIN_HEIGHT);
+		SDL_RenderDrawLine(display->renderer, 0, i * 64, WIN_WIDTH, i * 64);
+		i++;
+	}
+	SDL_SetRenderDrawColor(display->renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+	(void)game_state;
 }

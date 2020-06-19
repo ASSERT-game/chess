@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 22:41:24 by home              #+#    #+#             */
-/*   Updated: 2020/06/17 05:44:39 by home             ###   ########.fr       */
+/*   Updated: 2020/06/18 04:11:09 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void		draw_game_state(t_game_state *game_state, t_display *display);
 void		draw_hover_tile(t_game_state *game_state, t_display *display);
 void		draw_select_tile(t_game_state *game_state, t_display *display);
 void		draw_possible_tiles(t_game_state *game_state, t_display *display);
+void		draw_grid(t_game_state *game_state, t_display *display);
 
 void		toggle_pawn_moveset(t_game_state *game_state);
 void		toggle_rook_moveset(t_game_state *game_state);
