@@ -1,6 +1,6 @@
 - [ ] Castle
 - [ ] Pawn Promotion
-- [ ] Pawn Jumps over piece in first move
+- [ ] Pawn should not jump over piece in first move
 - [ ] Pawn en passant capture
 - [ ] Check Condition
 - [ ] Checkmate Check Condition
